@@ -18,7 +18,6 @@ final class HttpRequest implements Runnable {
         //try to process request
         try {
             processRequest();
-            System.out.println("Request processed.");
         } catch (Exception e) {
             e.printStackTrace();
         } //try
@@ -26,7 +25,6 @@ final class HttpRequest implements Runnable {
     } //run
 
     private void processRequest() throws Exception {
-        System.out.println("Starting to process request...");
 
         // Get a reference to the socket's input and output streams.
         InputStream is = socket.getInputStream();
@@ -55,8 +53,7 @@ final class HttpRequest implements Runnable {
         tokens.nextToken(); // skip over the method, which should be "GET"
         String fileName = tokens.nextToken();
         // Prepend a "." so that file request is within the current directory.
-        fileName = "html/" + fileName;
-        System.out.println("fileName: " + fileName);
+        fileName = "html" + fileName;
 
         // Open the requested file.
         FileInputStream fis = null;

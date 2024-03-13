@@ -9,7 +9,6 @@ public static void main(String args[]) throws Exception {
         // Establish the listen socket.
         ServerSocket serverSocket = new ServerSocket(port);
 
-        System.out.println("Starting to listen on port " + port + "...");
         // Process HTTP service requests in an infinite loop.
         while (true) {
             // Listen for a TCP connection request.
