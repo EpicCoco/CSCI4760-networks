@@ -8,9 +8,7 @@ final class HttpRequest implements Runnable {
     Socket socket;
     // Constructor
     public HttpRequest(Socket socket) throws Exception {
-
         this.socket = socket;
-
     } //HttpRequest
 
     // Implement the run() method of the Runnable interface.
@@ -27,7 +25,8 @@ final class HttpRequest implements Runnable {
     } //run
 
     private void processRequest() throws Exception {
-
+        System.out.println("Starting to process request...");
+        
         // Get a reference to the socket's input and output streams.
         InputStream is = socket.getInputStream();
         DataOutputStream os = new DataOutputStream(socket.getOutputStream());
